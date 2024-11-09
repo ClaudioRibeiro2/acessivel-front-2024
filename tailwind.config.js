@@ -9,6 +9,8 @@ module.exports = {
   theme: {
   	extend: {
   		colors: {
+			primaryBlue: '#2F80ED',
+			redError: '#FA0F00',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
