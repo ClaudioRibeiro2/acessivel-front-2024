@@ -61,7 +61,9 @@ const LoginUserForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button className="w-full" type="submit">
+          Entrar
+        </Button>
       </form>
     </Form>
   );
