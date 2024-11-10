@@ -1,6 +1,7 @@
 import { LoginUserForm } from "@/components/index";
 import Image from "next/image";
 import LogoAcessivel from "@/assets/img/+Acessível.png";
+import DogImage from "@/assets/img/dog.jpg";
 import Link from "next/link";
 
 export default function LoginUser() {
@@ -21,6 +22,13 @@ export default function LoginUser() {
           Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
           consectetur.
         </p>
+        <Image
+          className="m-auto my-4 rounded-md w-full"
+          src={DogImage}
+          alt="Logo"
+          width={300}
+          height={200}
+        />
         <LoginUserForm />
         <p className="text-center mt-3">
           Não faz parte ainda? {""}
