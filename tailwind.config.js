@@ -60,7 +60,10 @@ module.exports = {
   				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
-  			}
+  			},
+				'blue-acessivel': '#2364AF',
+				'yellow-acessivel':'#FABE0C',
+				'green-acessivel':'#46AF43'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
