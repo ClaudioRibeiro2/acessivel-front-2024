@@ -1,5 +1,5 @@
 "use client";
-
+import { useEffect } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -23,7 +23,7 @@ const formSchema = z.object({
   state: z.string().min(2).max(2).optional(),
 });
 
-const AddressUserForm = ({ cep }) => {
+const AddressUserForm = () => {
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,6 +35,19 @@ const AddressUserForm = ({ cep }) => {
       state: "",
     },
   });
+
+  useEffect(() => {
+    if (form.getValues("cep").length === 8) {
+      fetch(`https://viacep.com.br/ws/${form.getValues("cep")}/json/`)
+        .then((response) => response.json())
+        .then((data) => {
+          form.setValue("address", data.logradouro);
+          form.setValue("complement", data.complemento);
+          form.setValue("city", data.localidade);
+          form.setValue("state", data.uf);
+        });
+    }
+  }, [form.getValues("cep")]);
 
   function onSubmit(values) {
     console.log(values);
@@ -50,7 +63,7 @@ const AddressUserForm = ({ cep }) => {
             <FormItem>
               <FormLabel>Cep</FormLabel>
               <FormControl>
-                <Input placeholder="Cep" {...field} />
+                <Input placeholder="Cep" {...field} maxLength={8} />
               </FormControl>
               <FormMessage />
             </FormItem>
