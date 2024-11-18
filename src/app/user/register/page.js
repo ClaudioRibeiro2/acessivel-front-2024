@@ -24,7 +24,7 @@ export default function SignupUser() {
         <RegisterUserForm />
         <p className="text-center mt-3">
           Já está cadastrado no sistema? {""}
-          <Link href="/login-user">Clique aqui para entrar!</Link>
+          <Link href="/user/login">Clique aqui para entrar!</Link>
         </p>
       </div>
     </div>

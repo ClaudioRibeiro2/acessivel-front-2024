@@ -32,7 +32,7 @@ export default function LoginUser() {
         <LoginUserForm />
         <p className="text-center mt-3">
           Não faz parte ainda? {""}
-          <Link href="/register-user">Clique aqui para se cadastrar!</Link>
+          <Link href="/user/register">Clique aqui para se cadastrar!</Link>
         </p>
       </div>
     </div>
