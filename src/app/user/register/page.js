@@ -1,20 +1,10 @@
-import LogoAcessivel from "@/assets/img/+Acessível.png";
 import Link from "next/link";
-import Image from "next/image";
-import { RegisterUserForm } from "@/components";
+import { AcessivelIcon, RegisterUserForm } from "@/components";
 
 export default function SignupUser() {
   return (
     <div className="gridMobile">
-      <Link href="/">
-        <Image
-          className="m-auto mt-4"
-          src={LogoAcessivel}
-          alt="Logo"
-          width={100}
-          height={100}
-        />
-      </Link>
+      <AcessivelIcon/>
       <div className="mt-3">
         <h1 className="text-2xl">Cadastrar-se</h1>
         <p className="my-3">
