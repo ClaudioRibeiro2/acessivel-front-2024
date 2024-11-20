@@ -9,8 +9,11 @@ module.exports = {
   theme: {
   	extend: {
   		colors: {
-  			primaryBlue: '#2F80ED',
-  			redError: '#FA0F00',
+  			'primary-blue': '#2F80ED',
+  			'red-error': '#FA0F00',
+			'blue-acessivel': '#2364AF',
+			'yellow-acessivel':'#FABE0C',
+			'green-acessivel':'#46AF43',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -61,9 +64,6 @@ module.exports = {
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
   			},
-				'blue-acessivel': '#2364AF',
-				'yellow-acessivel':'#FABE0C',
-				'green-acessivel':'#46AF43'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
