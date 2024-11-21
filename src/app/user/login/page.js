@@ -1,21 +1,14 @@
-import { LoginUserForm } from "@/components/index";
+import { AcessivelIcon, LoginUserForm } from "@/components/index";
 import Image from "next/image";
-import LogoAcessivel from "@/assets/img/+Acessível.png";
 import DogImage from "@/assets/img/dog.jpg";
 import Link from "next/link";
 
 export default function LoginUser() {
   return (
     <div className="gridMobile">
-      <Link href="/">
-        <Image
-          className="m-auto mt-4"
-          src={LogoAcessivel}
-          alt="Logo"
-          width={100}
-          height={100}
-        />
-      </Link>
+      <div className="flex">
+        <AcessivelIcon textAlign="left"/>
+      </div>
       <div className="mt-3 ">
         <h1 className="text-2xl">Entrar</h1>
         <p className="my-3">

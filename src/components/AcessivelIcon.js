@@ -2,7 +2,7 @@ import { cva } from "class-variance-authority";
 import Link from "next/link";
 
 const iconVariants = cva(
-  "font-black align-middle mt-1 tracking-tighter text-3xl md:text-4xl lg:text-5xl",
+  "font-black align-middle mt-1 tracking-tighter text-3xl md:text-4xl lg:text-5xl w-full",
     {
     variants: {
       textAlign: {
@@ -18,7 +18,7 @@ const iconVariants = cva(
 );
 export default function AcessivelIcon({ textAlign = 'center' }) {
   return (
-    <p className={iconVariants({ textAlign })}>
+    <div className={iconVariants({ textAlign })}>
       <Link href="/">
         <span className="text-blue-acessivel">+</span>
         <span className="text-yellow-acessivel">A</span>
@@ -31,6 +31,6 @@ export default function AcessivelIcon({ textAlign = 'center' }) {
         <span className="text-green-acessivel">e</span>
         <span className="text-blue-acessivel">l</span>
       </Link>
-    </p>
+    </div>
   )
 }
