@@ -15,38 +15,43 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs"
+import { Textarea } from "./ui/textarea"
 
 const TabsComponent = () => {
   return (
-    <Tabs defaultValue="account">
+    <Tabs defaultValue="queixa">
       <TabsList className="grid w-full grid-cols-2">
-        <TabsTrigger value="account">Account</TabsTrigger>
-        <TabsTrigger value="password">Password</TabsTrigger>
+        <TabsTrigger value="queixa">Queixa</TabsTrigger>
+        <TabsTrigger value="necessidade">Necessidade</TabsTrigger>
       </TabsList>
-      <TabsContent value="account">
+      <TabsContent value="queixa">
         <Card>
           <CardHeader>
-            <CardTitle>Account</CardTitle>
+            <CardTitle>Cadastrar Queixa</CardTitle>
             <CardDescription>
-              Make changes to your account here. Click save when you are done.
+              Cadastre uma queixa, sobre qualquer questão de acessibilidade!
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="space-y-1">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" defaultValue="" />
+              <Label htmlFor="title">Titulo</Label>
+              <Input id="title"/>
             </div>
             <div className="space-y-1">
-              <Label htmlFor="username">Username</Label>
-              <Input id="username" defaultValue="" />
+              <Label htmlFor="local">Local</Label>
+              <Input id="local" />
+            </div>
+            <div className="space-y-1">
+              <Label htmlFor="description">Descrição</Label>
+              <Textarea placeholder="Descrição do problema" />
             </div>
           </CardContent>
           <CardFooter>
-            <Button>Save changes</Button>
+            <Button>Cadastrar Queixa!</Button>
           </CardFooter>
         </Card>
       </TabsContent>
-      <TabsContent value="password">
+      <TabsContent value="necessidade">
         <Card>
           <CardHeader>
             <CardTitle>Password</CardTitle>
