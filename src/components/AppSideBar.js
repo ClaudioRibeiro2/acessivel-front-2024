@@ -1,4 +1,5 @@
-import { Calendar, Home, Inbox, NotepadText, PhoneOutgoing, Search, Settings, User } from "lucide-react";
+import { Home, NotepadText, PhoneOutgoing, User } from "lucide-react";
+import Link  from "next/link";
 
 import {
   Sidebar,
@@ -14,22 +15,22 @@ import {
 const items = [
   {
     title: "Dashboard",
-    url: "#",
+    url: "/",
     icon: Home,
   },
   {
     title: "Solicitações",
-    url: "dashboard/requirements",
+    url: "/user/dashboard/requirements",
     icon: NotepadText,
   },
   {
     title: "Dados Pessoais",
-    url: "dashboard/data",
+    url: "/user/dashboard/data",
     icon: User,
   },
   {
     title: "Fale Conosco",
-    url: "dashboard/contact",
+    url: "/user/dashboard/contact",
     icon: PhoneOutgoing,
   },
 ];
@@ -45,10 +46,10 @@ const AppSidebar = () => {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
+                    <Link replace href={item.url}>
                       <item.icon/>
                       <span className="text-lg">{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
