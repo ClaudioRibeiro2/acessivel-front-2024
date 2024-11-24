@@ -15,7 +15,7 @@ import {
 const items = [
   {
     title: "Dashboard",
-    url: "/",
+    url: "/user/dashboard",
     icon: Home,
   },
   {
@@ -40,7 +40,7 @@ const AppSidebar = () => {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          <SidebarGroupLabel>+Acessivel</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (

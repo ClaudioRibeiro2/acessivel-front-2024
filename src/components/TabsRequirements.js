@@ -27,23 +27,27 @@ const TabsComponent = () => {
       <TabsContent value="queixa">
         <Card>
           <CardHeader>
-            <CardTitle>Cadastrar Queixa</CardTitle>
-            <CardDescription>
+            <CardTitle className="text-xl">Cadastrar Queixa</CardTitle>
+            <CardDescription className="text-base">
               Cadastre uma queixa, sobre qualquer questão de acessibilidade!
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="space-y-1">
-              <Label htmlFor="title">Titulo</Label>
-              <Input id="title"/>
+              <Label className="text-base" htmlFor="title">Titulo</Label>
+              <Input id="title" />
             </div>
             <div className="space-y-1">
-              <Label htmlFor="local">Local</Label>
+              <Label className="text-base" htmlFor="local">Local</Label>
               <Input id="local" />
             </div>
             <div className="space-y-1">
-              <Label htmlFor="description">Descrição</Label>
+              <Label className="text-base" htmlFor="description">Descrição</Label>
               <Textarea placeholder="Descrição do problema" />
+            </div>
+            <div className="space-y-1">
+              <Label className="text-base" htmlFor="picture">Foto</Label>
+              <Input id="picture" type="file" />
             </div>
           </CardContent>
           <CardFooter>
@@ -61,12 +65,20 @@ const TabsComponent = () => {
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="space-y-1">
-              <Label htmlFor="current">Current password</Label>
-              <Input id="current" type="password" />
+              <Label className="text-base" htmlFor="title">Titulo</Label>
+              <Input id="title" />
             </div>
             <div className="space-y-1">
-              <Label htmlFor="new">New password</Label>
-              <Input id="new" type="password" />
+              <Label className="text-base" htmlFor="local">Local</Label>
+              <Input id="local" />
+            </div>
+            <div className="space-y-1">
+              <Label className="text-base" htmlFor="description">Descrição</Label>
+              <Textarea placeholder="Descrição do problema" />
+            </div>
+            <div className="space-y-1">
+              <Label className="text-base" htmlFor="picture">Foto</Label>
+              <Input id="picture" type="file" />
             </div>
           </CardContent>
           <CardFooter>
