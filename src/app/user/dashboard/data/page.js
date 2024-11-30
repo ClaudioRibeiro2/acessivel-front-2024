@@ -1,4 +1,4 @@
-import { Tabs } from "@/components";
+import { TabsPersonalData } from "@/components";
 
 export default function Data() {
     return (
@@ -8,7 +8,7 @@ export default function Data() {
           Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
           consectetur.
         </p>
-        <Tabs/>
+        <TabsPersonalData/>
       </div>
     );
   }

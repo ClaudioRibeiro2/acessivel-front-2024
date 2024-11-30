@@ -5,3 +5,4 @@ export { default as AcessivelIcon} from "./AcessivelIcon";
 export { default as AddressUserForm } from "./AddressUserForm";
 export { default as Tabs } from "./Tabs";
 export { default as TabsRequirements } from "./TabsRequirements" 
+export { default as TabsPersonalData } from "./TabsPersonalData"
