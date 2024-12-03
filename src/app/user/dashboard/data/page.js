@@ -3,11 +3,7 @@ import { TabsPersonalData } from "@/components";
 export default function Data() {
     return (
       <div className="gridMobile">
-        <h1>Data</h1>
-        <p>
-          Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
-          consectetur.
-        </p>
+        <h1 className="text-2xl font-black text-center my-5">INFORMAÇÕES PESSOAIS</h1>
         <TabsPersonalData/>
       </div>
     );

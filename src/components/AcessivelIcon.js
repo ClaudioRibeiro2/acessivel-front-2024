@@ -2,7 +2,7 @@ import { cva } from "class-variance-authority";
 import Link from "next/link";
 
 const iconVariants = cva(
-  "font-black align-middle mt-1 tracking-tighter text-3xl md:text-4xl lg:text-5xl w-full",
+  "font-black align-middle tracking-tighter text-3xl md:text-4xl lg:text-5xl",
     {
     variants: {
       textAlign: {

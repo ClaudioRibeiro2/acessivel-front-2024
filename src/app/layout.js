@@ -3,8 +3,9 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSideBar } from "@/components";
+import { AcessivelIcon, AppSideBar } from "@/components";
 import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,7 +30,10 @@ export default function RootLayout({ children }) {
         <SidebarProvider>
           {isDashboardRoute && <AppSideBar />}
           <main>
-            {isDashboardRoute && <SidebarTrigger />}
+            <div className="flex justify-between px-5">
+              <AcessivelIcon />
+              {isDashboardRoute && <SidebarTrigger />}
+            </div>
             {children}
           </main>
         </SidebarProvider>
