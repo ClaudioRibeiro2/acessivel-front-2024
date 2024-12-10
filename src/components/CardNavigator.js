@@ -6,7 +6,7 @@ const CardNavigator = ({ cards }) => {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {cards.map((card, index) => (
                 <Link href={card.href} key={index}>
-                    <Card className="text-white p-24 bg-primary-blue text-center border-2 border-primary-blue">
+                    <Card className="text-white py-16 bg-primary-blue text-center border-2 border-primary-blue">
                         <span>{card.title}</span>
                     </Card>
                 </Link>

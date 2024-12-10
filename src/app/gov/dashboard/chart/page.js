@@ -1,6 +1,6 @@
-import { TabsPersonalData } from "@/components";
+import { ChartExample } from "@/components";
 
-export default function Data() {
+export default function Chart() {
     return (
       <div className="gridMobile">
         {/* <h1>Data</h1> */}
@@ -8,7 +8,7 @@ export default function Data() {
           Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
           consectetur.
         </p> */}
-        <TabsPersonalData/>
+        <ChartExample />
       </div>
     );
   }
