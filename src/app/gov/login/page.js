@@ -1,6 +1,6 @@
 import { AcessivelIcon, LoginUserForm } from "@/components/index";
 import Image from "next/image";
-import dogImage from "@/assets/img/dog.jpg";
+import govImage from "@/assets/img/conta_govbr_v2.jpg";
 import Link from "next/link";
 
 export default function LoginUser() {
@@ -17,7 +17,7 @@ export default function LoginUser() {
         </p> */}
         <Image
           className="m-auto my-4 rounded-md w-full"
-          src={dogImage}
+          src={govImage}
           alt="Logo"
           width={300}
           height={200}

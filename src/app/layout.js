@@ -1,31 +1,25 @@
 "use client";
 
-import localFont from "next/font/local";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AcessivelIcon, AppSideBar } from "@/components";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { Roboto } from "next/font/google"
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const roboto = Roboto({
+  weight: ["400", "500", "700", "900"],
+  subsets: ["latin"]  
+})
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
   const isDashboardRoute = pathname?.includes("dashboard");
 
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={roboto.className}
       >
         <SidebarProvider>
           {isDashboardRoute && <AppSideBar />}

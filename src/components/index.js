@@ -6,3 +6,4 @@ export { default as AddressUserForm } from "./AddressUserForm";
 export { default as TabsRequirements } from "./TabsRequirements" 
 export { default as TabsPersonalData } from "./TabsPersonalData"
 export { default as CardNavigator } from "./CardNavigator"
+export { default as ChartExample } from "./ChartExample"
