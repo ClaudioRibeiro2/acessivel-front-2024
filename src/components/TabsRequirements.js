@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -16,13 +18,45 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs"
 import { Textarea } from "./ui/textarea"
+import { useEffect, useState } from "react"
+import TableRequirements from "./TableRequirements"
+import { v4 as uuidv4 } from "uuid"
 
-const TabsComponent = () => {
+const TabsRequirements = () => {
+  const [titulo, setTitulo] = useState("");
+  const [local, setLocal] = useState("");
+
+  const [queixas, setQueixas] = useState([]);
+  useEffect(()=> {
+    const localStorageItem = localStorage.getItem("queixas") || "[]"
+    setQueixas(JSON.parse(localStorageItem))
+    console.log(queixas)
+  }, [])
+  
+  const salvarQueixa = () => {
+    const codigo = uuidv4()
+    const obj = {
+      codigo: codigo,
+      titulo: titulo,
+      local: local
+    }
+    queixas.push(obj)
+    localStorage.setItem("queixas", JSON.stringify(queixas))
+    setQueixas(queixas)
+  } 
+
+  const handleTitulo = (e) => {
+    setTitulo(e.target.value)
+  }
+
+  const handleLocal = (e) => {
+    setLocal(e.target.value)
+  }
+
   return (
     <Tabs defaultValue="queixa">
       <TabsList className="grid w-full grid-cols-2">
         <TabsTrigger value="queixa">Queixa</TabsTrigger>
-        <TabsTrigger value="necessidade">Necessidade</TabsTrigger>
       </TabsList>
       <TabsContent value="queixa">
         <Card>
@@ -35,11 +69,11 @@ const TabsComponent = () => {
           <CardContent className="space-y-2">
             <div className="space-y-1">
               <Label className="text-base" htmlFor="title">Titulo</Label>
-              <Input id="title" />
+              <Input id="title" onChange={handleTitulo} />
             </div>
             <div className="space-y-1">
               <Label className="text-base" htmlFor="local">Local</Label>
-              <Input id="local" />
+              <Input id="local" onChange={handleLocal} />
             </div>
             <div className="space-y-1">
               <Label className="text-base" htmlFor="description">Descrição</Label>
@@ -47,47 +81,17 @@ const TabsComponent = () => {
             </div>
             <div className="space-y-1">
               <Label className="text-base" htmlFor="picture">Foto</Label>
-              <Input id="picture" type="file" />
+              <Input id="picture" type="file"/>
             </div>
           </CardContent>
           <CardFooter>
-            <Button>Cadastrar Queixa!</Button>
+            <Button onClick={salvarQueixa}>Cadastrar Queixa!</Button>
           </CardFooter>
         </Card>
-      </TabsContent>
-      <TabsContent value="necessidade">
-        <Card>
-          <CardHeader>
-            <CardTitle>Password</CardTitle>
-            <CardDescription>
-              Change your password here. After saving, you will be logged out.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label className="text-base" htmlFor="title">Titulo</Label>
-              <Input id="title" />
-            </div>
-            <div className="space-y-1">
-              <Label className="text-base" htmlFor="local">Local</Label>
-              <Input id="local" />
-            </div>
-            <div className="space-y-1">
-              <Label className="text-base" htmlFor="description">Descrição</Label>
-              <Textarea placeholder="Descrição do problema" />
-            </div>
-            <div className="space-y-1">
-              <Label className="text-base" htmlFor="picture">Foto</Label>
-              <Input id="picture" type="file" />
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button>Save password</Button>
-          </CardFooter>
-        </Card>
+        <TableRequirements queixas={queixas} />
       </TabsContent>
     </Tabs>
   )
 }
 
-export default TabsComponent
+export default TabsRequirements

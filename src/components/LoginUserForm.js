@@ -13,6 +13,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Link } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   email: z.string().email(),
@@ -20,6 +22,7 @@ const formSchema = z.object({
 });
 
 const LoginUserForm = () => {
+  const router = useRouter();
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -29,6 +32,7 @@ const LoginUserForm = () => {
   });
 
   function onSubmit(values) {
+    router.push("/user/dashboard")
     console.log(values);
   }
 
@@ -61,8 +65,8 @@ const LoginUserForm = () => {
             </FormItem>
           )}
         />
-        <Button className="w-full" type="submit">
-          Entrar
+        <Button className="w-full" type="submit" onClick={onSubmit}>
+            Entrar
         </Button>
       </form>
     </Form>

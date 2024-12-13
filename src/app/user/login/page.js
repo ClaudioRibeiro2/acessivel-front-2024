@@ -6,15 +6,8 @@ import Link from "next/link";
 export default function LoginUser() {
   return (
     <div className="gridMobile">
-      <div className="flex">
-        <AcessivelIcon textAlign="left"/>
-      </div>
       <div className="mt-3 ">
         <h1 className="text-2xl">Entrar</h1>
-        {/* <p className="my-3">
-          Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
-          consectetur.
-        </p> */}
         <Image
           className="m-auto my-4 rounded-md w-full"
           src={dogImage}

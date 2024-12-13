@@ -28,11 +28,6 @@ const items = [
     url: "/user/dashboard/data",
     icon: User,
   },
-  {
-    title: "Fale Conosco",
-    url: "/user/dashboard/contact",
-    icon: PhoneOutgoing,
-  },
 ];
 
 const AppSidebar = () => {
