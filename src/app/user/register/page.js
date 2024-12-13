@@ -6,7 +6,6 @@ import Image from "next/image";
 export default function SignupUser() {
   return (
     <div className="gridMobile">
-      <AcessivelIcon/>
       <div className="mt-3">
         <h1 className="text-2xl">Cadastrar-se</h1>
         {/* <p className="my-3">
